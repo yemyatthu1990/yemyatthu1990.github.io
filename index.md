@@ -8,4 +8,4 @@ Worry not, here comes DeepSeed which aims to be a perfect companion for your 3am
 # Support
 
 Email: deepseed.co@gmail.com
-Website: deepseed.co
+Website: www.deepseed.co
