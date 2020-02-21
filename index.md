@@ -1,6 +1,6 @@
 ## DeepSeed
 
-# User-Generated Content, Terms and Conditions
+## User-Generated Content, Terms and Conditions
 
 1. Rules and Regulations.
 The following terms and conditions (this "Agreement") sets forth the legally binding terms for your use of DeepSeed app (the app) .This Agreement covers any use of the app. If you do not agree to all of the terms and conditions of this Agreement, do not use the app.
