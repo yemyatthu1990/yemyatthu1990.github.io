@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ye Myat Thu</title>
+  <meta name="description" content="Ye Myat Thu — product-focused mobile engineer. Founding Mobile Engineer at Almedia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --ink: #18181b;
+      --muted: #71717a;
+      --line: #e4e4e7;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --glow: rgba(99, 102, 241, 0.16);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #09090b;
+        --surface: #121216;
+        --ink: #f4f4f5;
+        --muted: #a1a1aa;
+        --line: #27272a;
+        --accent: #a5b4fc;
+        --accent-soft: #1e1b4b;
+        --glow: rgba(129, 140, 248, 0.14);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(60rem 30rem at 85% -10%, var(--glow), transparent 60%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .page { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    .hero { padding: 6rem 0 3rem; }
+    .eyebrow {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin: 0 0 1rem;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 3.75rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+    .role { font-size: 1.15rem; font-weight: 500; margin: 0 0 1.25rem; }
+    .role a { color: var(--accent); text-decoration: none; }
+    .bio { color: var(--muted); font-size: 1.05rem; max-width: 36rem; margin: 0 0 2rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.5rem 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: 0.9rem; font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .chip:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .chip svg { width: 16px; height: 16px; }
+
+    section { padding: 2.5rem 0 0; }
+    h2 {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.1rem;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+    }
+    .app-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, #f97316, #e11d48);
+      color: #fff;
+    }
+    .app-icon svg { width: 28px; height: 28px; }
+    .app h3 { margin: 0; font-size: 1.15rem; letter-spacing: -0.01em; }
+    .app .meta { margin: 0.1rem 0 0.6rem; color: var(--muted); font-size: 0.85rem; }
+    .app p { margin: 0 0 1rem; }
+    .app-links { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.9rem; font-weight: 500; }
+    .app-links a { color: var(--accent); text-decoration: none; }
+    .app-links a:hover { text-decoration: underline; }
+
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 8.5rem 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .timeline li:first-child { border-top: 0; padding-top: 0; }
+    .period { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.8rem; color: var(--muted); padding-top: 0.2rem; }
+    .timeline h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+    .timeline .company { color: var(--muted); font-weight: 400; }
+    .timeline .company a { text-decoration: none; }
+    .timeline .company a:hover { color: var(--accent); }
+    .timeline p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.95rem; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 34rem) {
+      .hero { padding-top: 4rem; }
+      .timeline li { grid-template-columns: 1fr; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Mobile · Security · AI</p>
+      <h1>Ye Myat Thu</h1>
+      <p class="role">Founding Mobile Engineer at <a href="https://almedia.co" target="_blank" rel="noopener">Almedia</a></p>
+      <p class="bio">I'm a product-focused engineer with interests in mobile, security, and AI. I love experimenting with new things — recently I've picked up 3D printing.</p>
+      <nav class="links">
+        <a class="chip" href="https://github.com/yemyatthu1990" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a class="chip" href="https://www.linkedin.com/in/yemyat/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>
+          LinkedIn
+        </a>
+        <a class="chip" href="mailto:thu.yemyat@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Email
+        </a>
+      </nav>
+    </header>
+
+    <section id="apps">
+      <h2>Apps</h2>
+      <article class="app">
+        <div class="app-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+        </div>
+        <div>
+          <h3>SlicePilot</h3>
+          <p class="meta">Android · 3D printing</p>
+          <p>A 3D printing slicer for your phone. Open STL or 3MF models, slice them on-device, preview the result and send jobs to your cloud printer.</p>
+          <div class="app-links">
+            <a href="/apps/slicepilot/privacy.html">Privacy policy →</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <span class="period">2026 — Now</span>
+          <div>
+            <h3>Founding Mobile Engineer <span class="company">· <a href="https://almedia.co" target="_blank" rel="noopener">Almedia</a></span></h3>
+            <p>Building a rewarded advertising SDK from the ground up.</p>
+          </div>
+        </li>
+        <li>
+          <span class="period">2025 — 2026</span>
+          <div><h3>Senior Android Developer <span class="company">· <a href="https://www.adjoe.io" target="_blank" rel="noopener">Adjoe</a></span></h3></div>
+        </li>
+        <li>
+          <span class="period">2024 — 2025</span>
+          <div><h3>Staff Mobile Engineer <span class="company">· <a href="https://www.okx.com" target="_blank" rel="noopener">OKX</a></span></h3></div>
+        </li>
+        <li>
+          <span class="period">2020 — 2024</span>
+          <div><h3>Mobile Lead <span class="company">· <a href="https://shield.com" target="_blank" rel="noopener">SHIELD</a></span></h3></div>
+        </li>
+        <li>
+          <span class="period">2018 — 2020</span>
+          <div><h3>Android Developer <span class="company">· <a href="https://www.99.co" target="_blank" rel="noopener">99.co</a></span></h3></div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ol class="timeline">
+        <li>
+          <span class="period">MSc</span>
+          <div><h3>Computer Science <span class="company">· University of East London</span></h3></div>
+        </li>
+      </ol>
+    </section>
+
+    <footer>© 2026 Ye Myat Thu</footer>
+  </main>
+</body>
+</html>
